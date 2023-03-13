@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --clr-primary: rgb(163, 116, 255);
+  --clr-secondary: #17f1d1;
+  --clr-accent: rgb(255, 208, 116);
+  --clr-base: #fafaf6;
+  --clr-bg: rgb(29, 29, 31);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--clr-bg);
+  color: var(--clr-base);
+}
+
+.content-width {
+  max-width: 1250px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2em;
+}
+
+h1 {
+  font-size: 3.12rem;
+  font-weight: 800;
+  line-height: 100%;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 726px) {
+  h1 {
+    font-size: 5.37rem;
+  }
+}
+@media (min-width: 1240px) {
+  h1 {
+    font-size: 6.62rem;
+  }
+}
+@media (min-width: 1536px) {
+  h1 {
+    font-size: 8.37rem;
+  }
+}
+
+#blob {
+  height: 34vmax;
+  aspect-ratio: 1;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    var(--clr-primary),
+    var(--clr-secondary)
+  );
+  animation: rotate 20s infinite;
+  opacity: 0.8;
+  z-index: -2;
+}
+
+#block {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: -1;
+  backdrop-filter: blur(12vmax);
+}
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+  50% {
+    scale: 1 1.5;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+section {
+  min-height: 100vh;
+  position: relative;
+}
